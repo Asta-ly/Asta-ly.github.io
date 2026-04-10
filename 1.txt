@@ -1,6 +1,5 @@
 iss1
 iss2
-<<<<<<< HEAD
-=======
+HEAD
 iss3
->>>>>>> iss1
+iss1
