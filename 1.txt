@@ -1,13 +1,11 @@
-<<<<<<< HEAD
-iss1
-iss2
-HEAD
+iss4
 iss3
+HEAD
+iss2
 iss1
 =======
-iss2
-123455677
-123213
+iss0
 123
 123
->>>>>>> iss2
+123
+123
