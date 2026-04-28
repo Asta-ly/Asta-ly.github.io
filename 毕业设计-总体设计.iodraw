@@ -1,0 +1,94 @@
+<mxfile host="www.iodraw.com" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0" version="24.7.17">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1158" dy="656" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-2" value="主控芯片" style="rounded=0;whiteSpace=wrap;html=1;direction=south;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="430" y="275" width="100" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-3" value="温湿度检测模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="275" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-4" value="语音识别模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-5" value="门锁模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="250" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-6" value="空气质量和烟雾检测模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="249" y="505" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-7" value="雨量检测模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-8" value="WIFI模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-9" value="大气压强和雨滴检测模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-10" value="窗帘模块" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="590" y="500" width="120" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-11" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.103;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="MCobuwUnvHVSL1KNOAPF-3" target="MCobuwUnvHVSL1KNOAPF-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="300" y="360" as="sourcePoint" />
+            <mxPoint x="350" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-12" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.103;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="369" y="379.76" as="sourcePoint" />
+            <mxPoint x="430" y="379.76" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-13" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.103;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="369" y="532.26" as="sourcePoint" />
+            <mxPoint x="430" y="532.26" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="399" y="532.26" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-14" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.103;entryY=0.99;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="MCobuwUnvHVSL1KNOAPF-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="469" y="309.76" as="sourcePoint" />
+            <mxPoint x="530" y="309.76" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-15" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.109;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.001;exitY=0.412;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="MCobuwUnvHVSL1KNOAPF-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="587.1" y="304.52" as="sourcePoint" />
+            <mxPoint x="529.9999999999999" y="305.49" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.109;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.001;exitY=0.412;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="449.75" as="sourcePoint" />
+            <mxPoint x="529.9999999999999" y="450.24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.109;entryY=-0.029;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.001;exitY=0.412;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="590" y="534.75" as="sourcePoint" />
+            <mxPoint x="529.9999999999999" y="535.24" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-23" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.638;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="370.6" y="459.86" as="sourcePoint" />
+            <mxPoint x="430" y="459.88" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MCobuwUnvHVSL1KNOAPF-24" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.638;entryY=1.006;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="530.6" y="379.83000000000004" as="sourcePoint" />
+            <mxPoint x="590" y="379.85" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
