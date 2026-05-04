@@ -62,6 +62,7 @@
 "..\obj\timer.o"
 "..\obj\password.o"
 "..\obj\w25q128.o"
+"..\obj\su_03t.o"
 --library_type=microlib --strict --scatter "..\OBJ\¹¤³ÌÄ£°å.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph
 --info sizes --info totals --info unused --info veneers

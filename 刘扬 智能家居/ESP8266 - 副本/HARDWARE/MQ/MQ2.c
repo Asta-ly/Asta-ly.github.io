@@ -52,6 +52,8 @@ float MQ2_GetData_PPM(void)
 	
 	float ppm = 1000.0f*pow(RS/R0, -2.95f);
 
+	if(ppm<0 || ppm>10000)
+		ppm=1.0f;
 	return ppm;
 }
 

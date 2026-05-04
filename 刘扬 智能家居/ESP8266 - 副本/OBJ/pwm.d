@@ -37,3 +37,8 @@
 ..\obj\pwm.o: ..\LIB\inc\stm32f4xx_fsmc.h
 ..\obj\pwm.o: ..\HARDWARE\delay\delay.h
 ..\obj\pwm.o: ..\HARDWARE\BIT_BAND\bit_band.h
+..\obj\pwm.o: ..\HARDWARE\SU-03T\SU_03T.h
+..\obj\pwm.o: ..\HARDWARE\DHT11\dht11.h
+..\obj\pwm.o: ..\HARDWARE\LIGHT\LIGHT.h
+..\obj\pwm.o: ..\HARDWARE\ADC\ADC.h
+..\obj\pwm.o: D:\keil-stm32\ARM\ARMCC\Bin\..\include\math.h

@@ -21,33 +21,24 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
-D:\share\stm32工程\ESP8266 - 副本\USER\ESP8266.uvprojx
-Project File Date:  12/19/2025
+D:\biyelunwen\刘扬 智能家居\ESP8266 - 副本\USER\ESP8266.uvprojx
+Project File Date:  04/28/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keil-stm32\ARM\ARMCC\Bin'
 Build target 'ESP8266'
-compiling dht11.c...
-compiling main.c...
-..\HARDWARE\oled\oled.h(41): warning:  #47-D: incompatible redefinition of macro "IIC_SCL"  (declared at line 20 of "..\HARDWARE\BMP280\BMP280.h")
-  #define  IIC_SCL 	PBout(15)
-..\HARDWARE\oled\oled.h(76): warning:  #1295-D: Deprecated declaration Picture - give arg types
-  void Picture();
-..\HARDWARE\oled\oled.h(77): warning:  #1295-D: Deprecated declaration IIC_Oled_Start - give arg types
-  void IIC_Oled_Start();
-..\HARDWARE\oled\oled.h(78): warning:  #1295-D: Deprecated declaration IIC_Oled_Stop - give arg types
-  void IIC_Oled_Stop();
+compiling tasks.c...
 ..\HARDWARE\Stepper motor\step.h(13): warning:  #1-D: last line of file ends without a newline
   #endif
-main.c(85): warning:  #111-D: statement is unreachable
-  	free(adc_data);
-main.c(50): warning:  #177-D: variable "timeCount"  was declared but never referenced
-  	unsigned short timeCount = 0;	//鍙戦�侀棿闅斿彉閲?
-main.c: 7 warnings, 0 errors
+..\HARDWARE\SU-03T\SU_03T.h(15): warning:  #1295-D: Deprecated declaration SU_03T_Cmd - give arg types
+  void SU_03T_Cmd();
+..\HARDWARE\SU-03T\SU_03T.h(18): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\HARDWARE\tasks\tasks.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=26666 RO-data=10042 RW-data=280 ZI-data=22240  
+Program Size: Code=25046 RO-data=10038 RW-data=252 ZI-data=22236  
 FromELF: creating hex file...
-"..\OBJ\工程模板.axf" - 0 Error(s), 7 Warning(s).
+"..\OBJ\工程模板.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -59,7 +50,7 @@ Package Vendor: Keil
 <h2>Collection of Component include folders:</h2>
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:11
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -23,6 +23,8 @@
 #include "tasks.h"
 #include "KEY.h"
 #include "step.h"
+#include "SU_03T.h"
+
 
 #include <stdlib.h> // 引入malloc头文件
 
@@ -54,11 +56,12 @@ float bmp280_press,bmp280;
 	bme280Init();
 
 	PWM_SetCompare1(5);
-	 delay_ms(10);
-	 OLED_ShowString(10,1,"ESP8266_INIT...",16);
+	delay_ms(10);
+	OLED_ShowString(10,1,"ESP8266_INIT...",16);
+	printf("ESP8266_INIT...\n");
 	ESP8266_Init();	//初始化ESP8266
 
-	 OLED_Clear();
+	OLED_Clear();
 	printf("8266_INIT_END\n");
 	OLED_ShowString(10,1,"ESP8266_INIT_END",16);
 	//LED1=1;
@@ -70,7 +73,7 @@ float bmp280_press,bmp280;
 	printf("接入onenet成功");
 	OLED_ShowString(10,1,"Link onenet AC",16);
 	OneNET_Subscribe();
-	//timer_init();
+	timer_init();
 
 	 
 	while(1) 
@@ -118,8 +121,8 @@ void door(void)
 
 void Hardware_Init(void)
 {
-	//led_init();			     //LED端口初始化
-	DHT11_Init();
+	led_init();			     //LED端口初始化
+	//DHT11_Init();
 	PWM_Init();
 	uart_init(115200);//串口1初始化
 	uart3_init(115200);//串口3初始化
@@ -131,14 +134,16 @@ void Hardware_Init(void)
 	OLED_Init();
 	OLED_Clear();
 	Beep_Init();
-	W25Qxx_Init();
+	// W25Qxx_Init();
 	key_4X4_Init();
 	LIGHT_Init();
 	MQ2_Init();
 	MQ135_Init();
 	RAIN_Init();
 	STM32_SPI3_Init();
-	Step_Motor_Init();
+	//Step_Motor_Init();
+	SU_03T_Init();
+
 	printf(" Hardware init OK\r\n");
 }
 

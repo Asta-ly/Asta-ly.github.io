@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,STM32F40_41xxx</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\LIB\inc;..\LIB\src;..\USER;..\HARDWARE;..\HARDWARE\onenet;..\HARDWARE\sg90;..\HARDWARE\BIT_BAND;..\HARDWARE\cJSON;..\HARDWARE\delay;..\HARDWARE\ESP8266;..\HARDWARE\LED;..\HARDWARE\MQTT;..\HARDWARE\onenet;..\HARDWARE\usart;..\HARDWARE\DHT11;..\HARDWARE\ADC;..\HARDWARE\RC522;..\HARDWARE\LIGHT;..\HARDWARE\MQ;..\HARDWARE\BMP280;..\HARDWARE\RAIN;..\HARDWARE\Stepper motor;..\HARDWARE\BEEP;..\HARDWARE\KEY;..\HARDWARE\oled;..\HARDWARE\tasks;..\HARDWARE\timer;..\HARDWARE\password;..\HARDWARE\w25q128</IncludePath>
+              <IncludePath>..\CORE;..\LIB\inc;..\LIB\src;..\USER;..\HARDWARE;..\HARDWARE\onenet;..\HARDWARE\sg90;..\HARDWARE\BIT_BAND;..\HARDWARE\cJSON;..\HARDWARE\delay;..\HARDWARE\ESP8266;..\HARDWARE\LED;..\HARDWARE\MQTT;..\HARDWARE\onenet;..\HARDWARE\usart;..\HARDWARE\DHT11;..\HARDWARE\ADC;..\HARDWARE\RC522;..\HARDWARE\LIGHT;..\HARDWARE\MQ;..\HARDWARE\BMP280;..\HARDWARE\RAIN;..\HARDWARE\Stepper motor;..\HARDWARE\BEEP;..\HARDWARE\KEY;..\HARDWARE\oled;..\HARDWARE\tasks;..\HARDWARE\timer;..\HARDWARE\password;..\HARDWARE\w25q128;..\HARDWARE\SU-03T</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -716,6 +716,11 @@
               <FileName>w25q128.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\w25q128\w25q128.c</FilePath>
+            </File>
+            <File>
+              <FileName>SU_03T.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\SU-03T\SU_03T.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -88,10 +88,10 @@ _Bool OneNet_DevLink(void)
 extern u8 temp,humi;
 extern u16 light,rain,Pre,angle,servo2_angle;
 extern float ppm,aqi,CO2;
-extern uint8_t fan_mode;				
-extern uint8_t fan_status;
-extern uint8_t led_mode;				
-extern uint8_t led_status;
+extern uint8_t Fan_Mode;				
+extern uint8_t Fan_state;
+extern uint8_t Led_Mode;				
+extern uint8_t Led_state;
 extern uint8_t lock_state;
 
 uint16_t OneNet_FillBuf(char *buf)
@@ -107,57 +107,65 @@ uint16_t OneNet_FillBuf(char *buf)
 	sprintf(text, "\"lock_state\":{\"value\":%s},",lock_state?"true":"false");
 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"temp\":{\"value\":%d.%d},",temperatureH,temperatureL);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"temp\":{\"value\":%d.%d},",temperatureH,temperatureL);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"humi\":{\"value\":%d.%d},",humidityH,humidityL);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"humi\":{\"value\":%d.%d},",humidityH,humidityL);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"ppm\":{\"value\":%.1f},", ppm);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"ppm\":{\"value\":%.1f},", ppm);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"Light\":{\"value\":%d},", light);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"Light\":{\"value\":%d},", light);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"AQI\":{\"value\":%.1f},", aqi);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"AQI\":{\"value\":%.1f},", aqi);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"CO2\":{\"value\":%.1f},", CO2);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"CO2\":{\"value\":%.1f},", CO2);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"AMT\":{\"value\":%d},", Pre);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"AMT\":{\"value\":%d},", Pre);
+// 	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"rain\":{\"value\":%d},", rain);
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"rain\":{\"value\":%d},", rain);
+// 	strcat(buf, text);
 	
-//	memset(text, 0, sizeof(text));
-//	sprintf(text, "\"servo\":{\"value\":%d},", angle); 
-//	strcat(buf, text);
+// //	memset(text, 0, sizeof(text));
+// //	sprintf(text, "\"servo\":{\"value\":%d},", angle); 
+// //	strcat(buf, text);
 	
-	memset(text, 0, sizeof(text));
-	sprintf(text, "\"servo1\":{\"value\":%d}", Servo2_Status); 
-	strcat(buf, text);
+// 	memset(text, 0, sizeof(text));
+// 	sprintf(text, "\"servo1\":{\"value\":%d},", Servo2_Status); 
+// 	strcat(buf, text);
 //	
 //	memset(text, 0, sizeof(text));
 //	sprintf(text, "\"beep\":{\"value\":%s},", Beep_Status ? "true" : "false");
 //	strcat(buf, text);
 	
-//	memset(text, 0, sizeof(text));
-//	sprintf(text, "\"ledmode\":{\"value\":%s},", led_mode ? "true" : "false");
-//	strcat(buf, text);	
-//	
-//	memset(text, 0, sizeof(text));
-//	sprintf(text, "\"led\":{\"value\":%s}",led_status ? "true" : "false");
-//	strcat(buf, text);
+	memset(text, 0, sizeof(text));
+	sprintf(text, "\"ledmode\":{\"value\":%s},", Led_Mode ? "true" : "false");
+	strcat(buf, text);	
+	
+	memset(text, 0, sizeof(text));
+	sprintf(text, "\"led\":{\"value\":%s},",Led_state ? "true" : "false");
+	strcat(buf, text);
+
+	memset(text, 0, sizeof(text));
+	sprintf(text, "\"Fan_Mode\":{\"value\":%s},", Fan_Mode ? "true" : "false");
+	strcat(buf, text);	
+	
+	memset(text, 0, sizeof(text));
+	sprintf(text, "\"Fan\":{\"value\":%s}",Fan_state ? "true" : "false");
+	strcat(buf, text);
 	
 	strcat(buf, "}}");
 	
@@ -235,7 +243,6 @@ void OneNET_Publish(const char *topic, const char *msg)
 		
 		MQTT_DeleteBuffer(&mqtt_packet);										//删包
 	}
-
 }
 // ==========================================================
 // 函数名称：OneNET_SendPropertySetReply
@@ -349,16 +356,34 @@ void OneNET_Subscribe(void)
 	
 	MQTT_PACKET_STRUCTURE mqtt_packet = {NULL, 0, 0, 0};						//协议包
 	
-	char topic_buf[56];
-	const char *topic = topic_buf;
-	const char *topic1 = topic_buf;
+	// char topic_buf[56];
+	// const char *topic = topic_buf;
+	// const char *topic1 = topic_buf;
+	 // 1. 订阅控制指令主题（set）
+
+	char topic_set[64];
+    char topic_reply[64];
+    const char *topics[2]; 
+
+    snprintf(topic_set, sizeof(topic_set), 
+             "$sys/%s/%s/thing/property/set", PROID, DEVID);
+    
+    // 2. 订阅上报回复主题（post/reply）
+    snprintf(topic_reply, sizeof(topic_reply), 
+             "$sys/%s/%s/thing/property/post/reply", PROID, DEVID);
+
+    topics[0] = topic_set;
+    topics[1] = topic_reply;
+
+    printf("订阅主题: %s, %s\r\n", topic_set, topic_reply);
+
 	
 	
-	snprintf(topic_buf, sizeof(topic_buf), "$sys/%s/%s/thing/property/set", PROID, DEVID);
+	//snprintf(topic_buf, sizeof(topic_buf), "$sys/%s/%s/thing/property/set", PROID, DEVID);
 	
-	printf( "Subscribe Topic: %s\r\n", topic_buf);
+	//printf( "Subscribe Topic: %s\r\n", topic_buf);
 	
-	if(MQTT_PacketSubscribe(MQTT_SUBSCRIBE_ID, MQTT_QOS_LEVEL0, &topic, 1, &mqtt_packet) == 0)
+	if(MQTT_PacketSubscribe(MQTT_SUBSCRIBE_ID, MQTT_QOS_LEVEL0, topics, 1, &mqtt_packet) == 0)
 	{
 		ESP8266_SendData(mqtt_packet._data, mqtt_packet._len);					//向平台发送订阅请求
 		
@@ -400,7 +425,7 @@ void OneNet_RevPro(unsigned char *cmd)
 	int num = 0;
 	
 //	cJSON *raw_json, *params_json, *servo_json , *servo1_json ,*fanmode_js , *fan_js, *ledmode_js , *led_js;
-	cJSON *raw_json, *params_json,*door_json,*id_item,*servo1_json;
+	cJSON *raw_json, *params_json,*door_json,*id_item,*servo1_json,*fanmode_json,*ledmode_json,*fan_json,*led_json;
 	type = MQTT_UnPacketRecv(cmd);
 	switch(type)
 	{
@@ -453,29 +478,33 @@ void OneNet_RevPro(unsigned char *cmd)
 //					}
 //				}
 //				
-//				fanmode_js = cJSON_GetObjectItem(params_json , "fanmode");
-//				if(fanmode_js != NULL)
-//				{
-//					fan_mode = fanmode_js->valueint;
-//				}
-//				
-//				fan_js = cJSON_GetObjectItem(params_json , "fan");
-//				if(fan_js != NULL)
-//				{
-//					fan_status = fan_js->valueint;
-//				}
-//				
-//				ledmode_js = cJSON_GetObjectItem(params_json , "ledmode");
-//				if(ledmode_js != NULL)
-//				{
-//					led_mode = ledmode_js->valueint;
-//				}
-//				
-//				led_js = cJSON_GetObjectItem(params_json , "led");
-//				if(led_js != NULL)
-//				{
-//					led_status = led_js->valueint;
-//				}
+				fanmode_json = cJSON_GetObjectItem(params_json , "Fan_Mode");
+				if(fanmode_json != NULL)
+				{
+					Fan_Mode = (fanmode_json->type == cJSON_True) ? 1 : 0;
+					Set_Fan_Mode(Fan_Mode);
+				}
+				
+				fan_json = cJSON_GetObjectItem(params_json , "Fan");
+				if(fan_json != NULL)
+				{
+					Fan_state = (fan_json->type == cJSON_True) ? 1 : 0;
+					PWM_Set_Fan(100);
+				}
+				
+				ledmode_json = cJSON_GetObjectItem(params_json , "ledmode");
+				if(ledmode_json != NULL)
+				{
+					Led_Mode = (ledmode_json->type == cJSON_True) ? 1 : 0;
+					Set_Led_Mode(Led_Mode);
+				}
+				
+				led_json = cJSON_GetObjectItem(params_json , "led");
+				if(led_json != NULL)
+				{
+					Led_state = (led_json->type == cJSON_True) ? 1 : 0;
+					PWM_Set_LED(100);
+				}
 //				
 				servo1_json = cJSON_GetObjectItem(params_json,"servo1");//提取servo
 				if(servo1_json != NULL)

@@ -56,3 +56,4 @@
 ..\obj\tasks.o: ..\HARDWARE\RC522\MFRC522.h
 ..\obj\tasks.o: ..\HARDWARE\Stepper motor\step.h
 ..\obj\tasks.o: D:\keil-stm32\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\tasks.o: ..\HARDWARE\SU-03T\SU_03T.h

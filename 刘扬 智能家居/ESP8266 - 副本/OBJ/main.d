@@ -62,3 +62,4 @@
 ..\obj\main.o: ..\HARDWARE\tasks\tasks.h
 ..\obj\main.o: ..\HARDWARE\KEY\KEY.h
 ..\obj\main.o: ..\HARDWARE\Stepper motor\step.h
+..\obj\main.o: ..\HARDWARE\SU-03T\SU_03T.h

@@ -18,6 +18,8 @@
 #include "MFRC522.h"
 #include "step.h"
 #include <stdlib.h> // 引入malloc头文件
+#include "SU_03T.h"
+
 
 uint32_t task1_cnt = 0;
 uint32_t task2_cnt = 0;
@@ -73,10 +75,12 @@ void timer_isr(void)
         task3_cnt = 0;
     }
     
-    Get_Value();
-
-   Update_Value();
+    //Get_Value();
+    Update_Value();
 	Get_Onenet_Cmd();
+	SU_03T_Cmd();
+	//Auto_Fan();
+	//Auto_Led();
 //    printf("value1:%.2f, value2:%.2f\r\n", (float)adc_value[0]/4096*3.3, (float)adc_value[1]/4096*3.3);
 }
 
